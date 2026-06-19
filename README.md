@@ -38,7 +38,7 @@ El sistema está diseñado bajo una arquitectura desacoplada, orientada a servic
 
 ---
 
-## 🚀 Guía de Instalación y Despliegue
+##  Guía de Instalación y Despliegue
 
 Guía completa para instalar, configurar y desplegar todo el ecosistema del sistema.
 
