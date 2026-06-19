@@ -1,4 +1,4 @@
-# 🛒 Sistema Automatizado de Ventas - Micromercado "Preciazo"
+# Sistema Automatizado de Ventas - Micromercado "Preciazo"
 
 ## Ecosistema Transaccional con Inteligencia Artificial  
 **Dify + Node.js + MySQL + Cloudflare**
