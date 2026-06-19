@@ -8,7 +8,7 @@ Este proyecto integra un agente de Inteligencia Artificial capaz de procesar len
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 El sistema está diseñado bajo una arquitectura desacoplada, orientada a servicios y eventos, con separación clara de responsabilidades.
 
@@ -28,7 +28,7 @@ El sistema está diseñado bajo una arquitectura desacoplada, orientada a servic
 
 ---
 
-## 📁 Estructura del Repositorio
+## Estructura del Repositorio
 
 ```text
 ├── backend-api/          # Código fuente de la API REST (Node.js + Express)
@@ -42,7 +42,7 @@ El sistema está diseñado bajo una arquitectura desacoplada, orientada a servic
 
 Guía completa para instalar, configurar y desplegar todo el ecosistema del sistema.
 
-### 1️⃣ Base de Datos (MySQL)
+### 1 ase de Datos (MySQL)
 
 1. Dirígete a la carpeta `/base-de-datos`.
 2. Abre tu gestor de MySQL (Workbench, phpMyAdmin o consola).
@@ -58,7 +58,7 @@ Resultado: base de datos lista para operar sin lógica adicional.
 
 ---
 
-### 2️⃣ Backend – API REST (Node.js + Express)
+### 2 Backend – API REST (Node.js + Express)
 
 1. Accede a la carpeta `/backend-api`.
 2. Instala dependencias:
@@ -82,7 +82,7 @@ El backend quedará activo en `http://localhost:3000`.
 
 ---
 
-### 3️⃣ Conectividad Segura – Cloudflare Tunnel
+### 3 Conectividad Segura – Cloudflare Tunnel
 
 Expón el backend de forma segura mediante HTTPS:
 
@@ -94,7 +94,7 @@ Cloudflare generará una URL pública HTTPS que será utilizada por el agente de
 
 ---
 
-### 4️⃣ Agente de IA – Dify
+### 4 Agente de IA – Dify
 
 1. Ingresa a tu panel de Dify.
 2. Selecciona **Crear App → Importar desde archivo DSL**.
@@ -105,9 +105,9 @@ El agente queda conectado en tiempo real al backend y a la base de datos.
 
 ---
 
-## 🛠️ Casos de Uso Validados
+##  Casos de Uso Validados
 
-### 🔎 Consulta Dinámica de Inventario (GET)
+###  Consulta Dinámica de Inventario (GET)
 
 - El usuario consulta un producto en lenguaje natural.
 - La IA interpreta la intención.
@@ -116,7 +116,7 @@ El agente queda conectado en tiempo real al backend y a la base de datos.
 
 ---
 
-### ⚠️ Control de Quiebre de Stock (Edge Case)
+###  Control de Quiebre de Stock (Edge Case)
 
 - Si `stock_actual = 0`:
   - El backend bloquea la operación.
@@ -125,7 +125,7 @@ El agente queda conectado en tiempo real al backend y a la base de datos.
 
 ---
 
-### 💰 Persistencia de Venta Completa (POST)
+###  Persistencia de Venta Completa (POST)
 
 - El usuario confirma la compra.
 - Se registra la venta con ID de producto y cantidad.
@@ -138,7 +138,7 @@ No se requiere lógica adicional para inventarios en el backend.
 
 ---
 
-## 🎤 ¿Por qué este proyecto destaca?
+##  ¿Por qué este proyecto destaca?
 
 Este repositorio demuestra:
 - Arquitectura real de producción
@@ -151,4 +151,4 @@ Este archivo funciona como documentación técnica, guía de despliegue y marco 
 
 ---
 
-🚀 **Repositorio listo para defensa académica, presentación profesional o despliegue en producción.**
+
