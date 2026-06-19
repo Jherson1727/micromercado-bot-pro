@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  # --- CONTENEDOR DE LA BASE DE DATOS (MySQL) ---
+  db:
+    image: mysql:8.0
+    container_name: cajachica_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: caja_chica_pro
+      MYSQL_ROOT_PASSWORD: Admin123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./caja_chica_pro.sql:/docker-entrypoint-initdb.d/caja_chica_pro.sql
+      - mysql_data:/var/lib/mysql
+
+  # --- CONTENEDOR DEL BACKEND (Node.js) ---
+  backend:
+    build: .
+    container_name: cajachica_backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=Admin123
+      - DB_NAME=caja_chica_pro
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:

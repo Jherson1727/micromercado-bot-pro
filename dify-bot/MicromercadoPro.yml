@@ -1,0 +1,1137 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: MicromercadoPro
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/ollama:1.0.0@ae50a2db261bffa7289677f2b0a60e60762ceb187b602113b72425ccbe772dc3
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables:
+  - description: ''
+    id: 7dd213a6-3e9e-4309-8193-547d715d81c8
+    name: carrito_cantidad
+    selector:
+    - conversation
+    - carrito_cantidad
+    value: ''
+    value_type: string
+  - description: ''
+    id: 101a9b5e-adf6-47e6-84f1-0e57196e161a
+    name: carrito_id_producto
+    selector:
+    - conversation
+    - carrito_id_producto
+    value: ''
+    value_type: string
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 20
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1781550829123--1781550931687-target
+      selected: false
+      source: '1781550829123'
+      sourceHandle: source
+      target: '1781550931687'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: tool
+      id: 1781641024261-source-1781553283574-target
+      selected: false
+      source: '1781641024261'
+      sourceHandle: source
+      target: '1781553283574'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: answer
+      id: 1781735801088-source-1781550687129-target
+      selected: false
+      source: '1781735801088'
+      sourceHandle: source
+      target: '1781550687129'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1781120876141-source-1781746236176-target
+      selected: false
+      source: '1781120876141'
+      sourceHandle: source
+      target: '1781746236176'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1781746236176-true-1781550829123-target
+      selected: false
+      source: '1781746236176'
+      sourceHandle: 'true'
+      target: '1781550829123'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: parameter-extractor
+        targetType: tool
+      id: 1781641110199-source-1781300640385-target
+      selected: false
+      source: '1781641110199'
+      sourceHandle: source
+      target: '1781300640385'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1781553283574-source-1781815026923-target
+      selected: false
+      source: '1781553283574'
+      sourceHandle: source
+      target: '1781815026923'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: tool
+      id: 1781746236176-2d895e86-2688-4d3e-9e35-7ba8b0129741-1781735801088-target
+      selected: false
+      source: '1781746236176'
+      sourceHandle: 2d895e86-2688-4d3e-9e35-7ba8b0129741
+      target: '1781735801088'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1781746236176-16859882-33c3-45ae-bc06-596074976b0c-1781815884583-target
+      selected: false
+      source: '1781746236176'
+      sourceHandle: 16859882-33c3-45ae-bc06-596074976b0c
+      target: '1781815884583'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1781746236176-false-1781641110199-target
+      selected: false
+      source: '1781746236176'
+      sourceHandle: 'false'
+      target: '1781641110199'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: parameter-extractor
+      id: 1781746236176-3c249188-a511-408a-a1b5-69dc8b1f7a46-1781641024261-target
+      selected: false
+      source: '1781746236176'
+      sourceHandle: 3c249188-a511-408a-a1b5-69dc8b1f7a46
+      target: '1781641024261'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: assigner
+      id: 1781815026923-source-1781818818646-target
+      source: '1781815026923'
+      sourceHandle: source
+      target: '1781818818646'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: assigner
+        targetType: answer
+      id: 1781818818646-source-1781563630939-target
+      source: '1781818818646'
+      sourceHandle: source
+      target: '1781563630939'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1781300640385-source-17818381244040-target
+      source: '1781300640385'
+      sourceHandle: source
+      target: '17818381244040'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 17818381244040-source-1781548502505-target
+      source: '17818381244040'
+      sourceHandle: source
+      target: '1781548502505'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: Inicio
+        type: start
+        variables: []
+      height: 72
+      id: '1781120876141'
+      position:
+        x: 0
+        y: 343.4844755673074
+      positionAbsolute:
+        x: 0
+        y: 343.4844755673074
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            ja_JP: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            pt_BR: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            zh_Hans: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+          label:
+            en_US: buscar
+            ja_JP: buscar
+            pt_BR: buscar
+            zh_Hans: buscar
+          llm_description: 'Nombre o palabra clave del producto a buscar (ej: leche,
+            pan, trident, mabel)'
+          max: null
+          min: null
+          name: buscar
+          options: []
+          placeholder:
+            en_US: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            ja_JP: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            pt_BR: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            zh_Hans: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          buscar: ''
+        plugin_id: null
+        plugin_unique_identifier: null
+        provider_icon:
+          background: '#FEF7C3'
+          content: 🕵️
+        provider_id: 711def28-9b23-4198-9e3c-4b4e71997d38
+        provider_name: OpenAPI
+        provider_type: api
+        selected: false
+        title: buscarProductos
+        tool_configurations: {}
+        tool_description: Buscar productos en el inventario por nombre
+        tool_label: buscarProductos
+        tool_name: buscarProductos
+        tool_node_version: '2'
+        tool_parameters:
+          buscar:
+            type: mixed
+            value: '{{#1781641110199.producto_a_buscar#}}'
+        type: tool
+      height: 51
+      id: '1781300640385'
+      position:
+        x: 1044
+        y: 836.9318181818181
+      positionAbsolute:
+        x: 1044
+        y: 836.9318181818181
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        answer: '{{#17818381244040.mensaje_final#}}'
+        selected: false
+        title: Respuesta 4
+        type: answer
+        variables: []
+      height: 101
+      id: '1781548502505'
+      position:
+        x: 1726
+        y: 786.4318181818181
+      positionAbsolute:
+        x: 1726
+        y: 786.4318181818181
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        answer: '🛒 ¡Pedido procesado en Caja!
+
+          Registrando la venta en el sistema transaccional. El total estimado ha sido
+          enviado a la base de datos de Cochabamba. ¡Gracias por tu compra!'
+        selected: false
+        title: Respuesta Final
+        type: answer
+        variables: []
+      height: 163
+      id: '1781550687129'
+      position:
+        x: 1044
+        y: 414.9318181818182
+      positionAbsolute:
+        x: 1044
+        y: 414.9318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - sys
+          - query
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: qwen2.5:1.5b
+          provider: langgenius/ollama/ollama
+        prompt_template:
+        - id: b2a3ae8a-12e7-4554-b1c0-829257870df4
+          role: system
+          text: "Eres el cajero del Micromercado \"Preciazo\". El cliente te está\
+            \ saludando o haciendo charla casual. \nResponde amablemente al saludo\
+            \ en un solo párrafo corto, dale la bienvenida y pregúntale en qué producto\
+            \ le puedes colaborar hoy (ya sea consultando stock o registrando una\
+            \ compra)."
+        selected: false
+        title: LLM 2
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1781550829123'
+      position:
+        x: 703
+        y: 84.43181818181819
+      positionAbsolute:
+        x: 703
+        y: 84.43181818181819
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        answer: '{{#1781550829123.text#}}'
+        selected: false
+        title: Respuesta 1
+        type: answer
+        variables: []
+      height: 101
+      id: '1781550931687'
+      position:
+        x: 1044
+        y: 91.93181818181819
+      positionAbsolute:
+        x: 1044
+        y: 91.93181818181819
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            ja_JP: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            pt_BR: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            zh_Hans: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+          label:
+            en_US: buscar
+            ja_JP: buscar
+            pt_BR: buscar
+            zh_Hans: buscar
+          llm_description: 'Nombre o palabra clave del producto a buscar (ej: leche,
+            pan, trident, mabel)'
+          max: null
+          min: null
+          name: buscar
+          options: []
+          placeholder:
+            en_US: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            ja_JP: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            pt_BR: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+            zh_Hans: 'Nombre o palabra clave del producto a buscar (ej: leche, pan,
+              trident, mabel)'
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          buscar: ''
+        plugin_id: null
+        plugin_unique_identifier: null
+        provider_icon:
+          background: '#FEF7C3'
+          content: 🕵️
+        provider_id: 711def28-9b23-4198-9e3c-4b4e71997d38
+        provider_name: OpenAPI
+        provider_type: api
+        selected: false
+        title: buscarProductos-1
+        tool_configurations: {}
+        tool_description: Buscar productos en el inventario por nombre
+        tool_label: buscarProductos
+        tool_name: buscarProductos
+        tool_node_version: '2'
+        tool_parameters:
+          buscar:
+            type: mixed
+            value: '{{#1781641024261.nombre_producto#}}'
+        type: tool
+      height: 51
+      id: '1781553283574'
+      position:
+        x: 1044
+        y: 283.9318181818182
+      positionAbsolute:
+        x: 1044
+        y: 283.9318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        answer: Deseas comprar {{#1781815026923.cantidad#}}unidades de {{#1781815026923.nombre#}}
+          a {{#1781815026923.precio_unitario#}}Bs cada una. El total sería {{#1781815026923.total_bs#}}
+          Bs. ¿Confirmas el pedido (Sí/No)?
+        selected: false
+        title: Respuesta 2
+        type: answer
+        variables: []
+      height: 204
+      id: '1781563630939'
+      position:
+        x: 2026
+        y: 224.4318181818182
+      positionAbsolute:
+        x: 2026
+        y: 224.4318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        instruction: 'Eres el sistema transaccional de Preciazo. Tu tarea es extraer
+          la cantidad y el nombre del producto de la solicitud de compra. REGLAS:
+
+          Para "cantidad": Extrae el número puro. Si el usuario no menciona cantidad,
+          asume 1.
+
+          Para "nombre_producto": Extrae el nombre exacto del producto que quiere
+          el cliente (ej: galletas, leche, pan). Sé estricto y devuelve solo los datos
+          pedidos..'
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: qwen2.5:1.5b
+          provider: langgenius/ollama/ollama
+        parameters:
+        - description: 'Nombre limpio del producto mencionado por el cliente (ej:
+            leche, pan, mabel'
+          name: nombre_producto
+          required: false
+          type: string
+        - description: La cantidad numérica exacta que quiere comprar
+          name: cantidad
+          required: false
+          type: number
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: Extractor de parámetros 2
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 87
+      id: '1781641024261'
+      position:
+        x: 703
+        y: 251.4318181818182
+      positionAbsolute:
+        x: 703
+        y: 251.4318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        instruction: 'Eres un extractor de datos de alta precisión para un micromercado.
+          Tu única tarea es extraer el nombre del producto mencionado por el usuario
+          en minúsculas y en singular.
+
+          REGLAS CRÍTICAS:
+
+          Convierte siempre a singular (ej: si dice "galletas", extrae "galleta";
+          si dice "leches", extrae "leche").
+
+          Extrae únicamente el sustantivo principal, elimina adjetivos innecesarios
+          o marcas a menos que sean indispensables (ej: si dice "galletitas mabel",
+          extrae "galleta").
+
+          Responde directamente con el parámetro. No agregues explicaciones.'
+        model:
+          completion_params:
+            temperature: 0
+          mode: chat
+          name: qwen2.5:1.5b
+          provider: langgenius/ollama/ollama
+        parameters:
+        - description: Nombre limpio del producto que el usuario menciona
+          name: producto_a_buscar
+          required: false
+          type: string
+        query:
+        - sys
+        - query
+        reasoning_mode: prompt
+        selected: false
+        title: Extractor de parámetros 1
+        type: parameter-extractor
+        vision:
+          enabled: false
+      height: 87
+      id: '1781641110199'
+      position:
+        x: 703
+        y: 804.4318181818181
+      positionAbsolute:
+        x: 703
+        y: 804.4318181818181
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        is_team_authorization: true
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          label:
+            en_US: id_producto
+            ja_JP: id_producto
+            pt_BR: id_producto
+            zh_Hans: id_producto
+          llm_description: ''
+          max: null
+          min: null
+          name: id_producto
+          options: []
+          placeholder:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          label:
+            en_US: cantidad
+            ja_JP: cantidad
+            pt_BR: cantidad
+            zh_Hans: cantidad
+          llm_description: ''
+          max: null
+          min: null
+          name: cantidad
+          options: []
+          placeholder:
+            en_US: ''
+            ja_JP: ''
+            pt_BR: ''
+            zh_Hans: ''
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: number
+        params:
+          cantidad: ''
+          id_producto: ''
+        plugin_id: null
+        plugin_unique_identifier: null
+        provider_icon:
+          background: '#FEF7C3'
+          content: 🕵️
+        provider_id: 711def28-9b23-4198-9e3c-4b4e71997d38
+        provider_name: OpenAPI
+        provider_type: api
+        selected: false
+        title: registrarVenta
+        tool_configurations: {}
+        tool_description: ''
+        tool_label: registrarVenta
+        tool_name: registrarVenta
+        tool_node_version: '2'
+        tool_parameters:
+          cantidad:
+            type: mixed
+            value: '{{#conversation.carrito_cantidad#}}'
+          id_producto:
+            type: mixed
+            value: '{{#conversation.carrito_id_producto#}}'
+        type: tool
+      height: 51
+      id: '1781735801088'
+      position:
+        x: 703
+        y: 462.4318181818182
+      positionAbsolute:
+        x: 703
+        y: 462.4318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: contains
+            id: 9ea4adc9-97e3-42ef-b065-04b42a46250b
+            value: hola
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: a620ba8d-8b15-4922-af0b-1adba4224a70
+            value: buenas
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 9fa587c5-04e8-47e2-a207-18691c7421f0
+            value: 'buenos '
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: f0ed0a1c-80b8-440c-b73a-6cf6b5f58ca6
+            value: gracias
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: ee983c8b-73cc-4485-a2e2-909aad547c15
+            value: chau
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 25fbf2be-f62d-45d9-8ed3-8b104cba87f6
+            value: saludos
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 5c1d0102-a359-421b-86cd-4f1a509fc515
+            value: Hola
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 815ca56d-b6d1-4dca-a009-dec1a6d05f51
+            value: Buenas
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 17e4f76b-2b19-4316-8902-d68663582a5a
+            value: Buenos
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 15b379aa-8b2d-4462-b93e-ab82716719c9
+            value: Gracias
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: def369b0-2fd5-40a5-b844-bbc1f2a2fabd
+            value: Saludos
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 72967828-5d04-4da5-99cd-02dc566d01dc
+            value: Gracias
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 2244d568-2e92-4af5-b9d2-f3b8a6673556
+            value: Chau
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 'true'
+          logical_operator: or
+        - case_id: 3c249188-a511-408a-a1b5-69dc8b1f7a46
+          conditions:
+          - comparison_operator: contains
+            id: b84a128a-fd67-4590-8880-66e218f3bcb5
+            value: comprar
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 309c6bfc-f9a7-450f-8d7b-f55d087c0592
+            value: quiero
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 7ae3618f-7219-41e7-a653-06601d7412e6
+            value: unidades
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 3c249188-a511-408a-a1b5-69dc8b1f7a46
+          logical_operator: or
+        - case_id: 2d895e86-2688-4d3e-9e35-7ba8b0129741
+          conditions:
+          - comparison_operator: contains
+            id: b17ac39f-8aa1-4d69-b6ad-3b3c3e591093
+            value: si
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: f57fb973-7eb2-4f6b-a617-abaa7928d23e
+            value: sí
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 1c512e9b-a64d-4c51-9514-487584103b24
+            value: claro
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 50ce93fd-781f-4150-b0ac-ec6a3eb5a00a
+            value: confirmo
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: da02e1d5-57f9-4e29-a569-86b0df77f5f8
+            value: dale
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 2d895e86-2688-4d3e-9e35-7ba8b0129741
+          logical_operator: or
+        - case_id: 16859882-33c3-45ae-bc06-596074976b0c
+          conditions:
+          - comparison_operator: contains
+            id: f5950db3-ae6e-4c1e-8c68-d9693df791a6
+            value: 'no'
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: ff6cbd00-7103-4f90-b6e0-88ebfbb43c0a
+            value: cancelar
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: e8a27b34-7503-42b8-86e2-7457af62e6d2
+            value: nada
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: contains
+            id: 7fa5c3bf-de56-41a6-9569-e5905fb9bd78
+            value: 'No'
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 16859882-33c3-45ae-bc06-596074976b0c
+          logical_operator: and
+        selected: false
+        title: SI/SINO 1
+        type: if-else
+      height: 813
+      id: '1781746236176'
+      position:
+        x: 342
+        y: 0
+      positionAbsolute:
+        x: 342
+        y: 0
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "function main({datos_producto, cantidad}) {\n    let cant = parseFloat(cantidad)\
+          \ || 1;\n\n    // 1. Control si la base de datos no encontró nada\n    if\
+          \ (!datos_producto || datos_producto === \"{}\" || datos_producto.trim()\
+          \ === \"\") {\n        return {\n            id_producto: \"0\",\n     \
+          \       nombre: \"Producto no encontrado\",\n            precio_unitario:\
+          \ \"0.00\",\n            cantidad: String(cant),\n            total_bs:\
+          \ \"0.00\"\n        };\n    }\n\n    try {\n        let producto = JSON.parse(datos_producto);\n\
+          \        \n        // 2. Control si el JSON viene con errores\n        if\
+          \ (!producto.nombre) {\n            return {\n                id_producto:\
+          \ \"0\",\n                nombre: \"Producto no especificado\",\n      \
+          \          precio_unitario: \"0.00\",\n                cantidad: String(cant),\n\
+          \                total_bs: \"0.00\"\n            };\n        }\n\n     \
+          \   // 3. Cálculos matemáticos \n        let precio = parseFloat(producto.precio_venta)\
+          \ || 0;\n        let total = (precio * cant).toFixed(2);\n\n     \n    \
+          \    return {\n            id_producto: String(producto.id || 0),\n    \
+          \        nombre: producto.nombre,\n            precio_unitario: precio.toFixed(2),\n\
+          \            cantidad: String(cant),\n            total_bs: total\n    \
+          \    };\n        \n    } catch (e) {\n        // 4. Control si el texto\
+          \ no es un JSON válido\n        return {\n            id_producto: \"0\"\
+          ,\n            nombre: \"Error de formato\",\n            precio_unitario:\
+          \ \"0.00\",\n            cantidad: String(cant),\n            total_bs:\
+          \ \"0.00\"\n        };\n    }\n}"
+        code_language: javascript
+        outputs:
+          cantidad:
+            children: null
+            type: string
+          id_producto:
+            children: null
+            type: string
+          nombre:
+            children: null
+            type: string
+          precio_unitario:
+            children: null
+            type: string
+          total_bs:
+            children: null
+            type: string
+        selected: false
+        title: Código 2
+        type: code
+        variables:
+        - value_selector:
+          - '1781553283574'
+          - text
+          value_type: string
+          variable: datos_producto
+        - value_selector:
+          - '1781641024261'
+          - cantidad
+          value_type: number
+          variable: cantidad
+      height: 51
+      id: '1781815026923'
+      position:
+        x: 1385
+        y: 292.4318181818182
+      positionAbsolute:
+        x: 1385
+        y: 292.4318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        answer: Entendido, pedido cancelado. ¿Deseas consultar algún otro producto
+          del inventario?
+        selected: false
+        title: Respuesta 3
+        type: answer
+        variables: []
+      height: 131
+      id: '1781815884583'
+      position:
+        x: 1044
+        y: 670.0217466241371
+      positionAbsolute:
+        x: 1044
+        y: 670.0217466241371
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        items:
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1781815026923'
+          - id_producto
+          variable_selector:
+          - conversation
+          - carrito_id_producto
+        - input_type: variable
+          operation: over-write
+          value:
+          - '1781815026923'
+          - cantidad
+          variable_selector:
+          - conversation
+          - carrito_cantidad
+        selected: false
+        title: Asignador de Variables
+        type: assigner
+        version: '2'
+      height: 109
+      id: '1781818818646'
+      position:
+        x: 1726
+        y: 224.4318181818182
+      positionAbsolute:
+        x: 1726
+        y: 224.4318181818182
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    - data:
+        code: "function main({json_crudo}) {\n    // 1. El escudo protector: Si no\
+          \ llega nada o la base de datos no encontró el producto\n    if (!json_crudo\
+          \ || json_crudo === \"{}\" || json_crudo === \"[]\" || json_crudo.trim()\
+          \ === \"\") {\n        return { mensaje_final: \"Lo siento, no contamos\
+          \ con ese producto en el inventario. ¿Hay algo más con lo que te pueda ayudar?\"\
+          \ };\n    }\n\n    try {\n        let p = JSON.parse(json_crudo);\n    \
+          \    \n        // 2. Si la base de datos nos manda una lista (Array), sacamos\
+          \ el primer producto\n        if (Array.isArray(p) && p.length > 0) {\n\
+          \            p = p[0];\n        }\n\n        // 3. Verificamos que el producto\
+          \ realmente tenga un nombre\n        if (!p || !p.nombre) {\n          \
+          \  return { mensaje_final: \"Lo siento, no contamos con ese producto en\
+          \ el inventario. ¿Hay algo más con lo que te pueda ayudar?\" };\n      \
+          \  }\n\n        // 4. Validación de stock agotado (El nuevo escudo de seguridad)\n\
+          \        if (p.stock_actual <= 0) {\n            return { \n           \
+          \     mensaje_final: `Lo siento, el producto ${p.nombre} se encuentra temporalmente\
+          \ agotado. ¿Deseas consultar otro artículo?` \n            };\n        }\n\
+          \n        // 5. Armamos el mensaje exitoso\n        let texto = `¡Hola!\
+          \ En el inventario de Preciazo tenemos actualmente ${p.stock_actual} unidades\
+          \ de ${p.nombre} a un precio de ${p.precio_venta}Bs. ¿Te registro algún\
+          \ pedido?`;\n        \n        return { mensaje_final: texto };\n      \
+          \  \n    } catch (e) {\n        // Si hay un error de lectura, usamos la\
+          \ respuesta por defecto\n        return { mensaje_final: \"Lo siento, no\
+          \ contamos con ese producto en el inventario. ¿Hay algo más con lo que te\
+          \ pueda ayudar?\" };\n    }\n}"
+        code_language: javascript
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        outputs:
+          mensaje_final:
+            children: null
+            type: string
+        selected: false
+        title: Parsear_Producto
+        type: code
+        variables:
+        - value_selector:
+          - '1781300640385'
+          - text
+          value_type: string
+          variable: json_crudo
+      height: 51
+      id: '17818381244040'
+      position:
+        x: 1362.1775864093754
+        y: 836.9318181818181
+      positionAbsolute:
+        x: 1362.1775864093754
+        y: 836.9318181818181
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 241
+    viewport:
+      x: -531.0164661775641
+      y: 138.39037381169032
+      zoom: 0.5787719728661491
+  rag_pipeline_variables: []
